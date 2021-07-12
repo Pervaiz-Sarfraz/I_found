@@ -1,0 +1,64 @@
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+        <div class="container">
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <a class="navbar-brand logo-text page-scroll" href="/">Ifound</a>
+
+            <!-- Image Logo -->
+            <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>  -->
+
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/#intro">Intro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/lost-items">lost Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/found-items">found Item</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/#features">Features</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Lost&found</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item page-scroll" href="Product.html">Application Details</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="/terms">Terms Conditions</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="/privacy">Privacy Policy</a>
+                        </div>
+                    </li>
+                </ul>
+                <% if (isAuthenticated) { %>
+                    <span class="nav-item">
+                        <form method="POST" action="/logout">
+                            <input type="hidden" value="<%=csrfToken%>" name="_csrf">
+
+                            <button type="submit"  class="btn-solid-sm page-scroll">Logout</button>
+                        </form>
+                    </span>
+                <% } else { %>
+                <span class="nav-item">
+                    <a class="btn-solid-sm page-scroll" href="/signup">Sign up</a>
+                </span>
+                <% } %>
+
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->

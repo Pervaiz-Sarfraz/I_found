@@ -1,0 +1,116 @@
+<%- include('./includes/head.ejs') %>
+
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+    <%- include('./includes/navbar.ejs') %>
+
+
+    <div class="hero flex-column">
+        <div class="post-creation">
+            <div class="heading-post">
+                <h1>Lost Items</h1>
+                <p>This page will contain all the post of lost items.if you have lost any thing click the
+                    create post and post it and we may able to help you along</p>
+                <a class=" btn creat-post" href="/lost">Create Post </a>
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <% items.forEach(item=>{ %>
+                <div class=" col-md-4 col-sm-6 col-12 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <% if(item.img){ %> 
+                            <img class="item-img" src="<%= item.img %>" alt="">
+                            <% } %> 
+                            <h5 class="card-title mt-3"><%= item.title %> </h5>
+                            <p class="card-text m-0"><%= item.name %> </p>
+                            <p class="card-text m-0"><%= item.email %> </p>
+                            <p class="card-text m-0"><%= item.regNo %> </p>
+                            <p class="card-text m-0"><%= item.dept %> </p>
+                            <p class="card-text m-0"><%= item.properties %></p>
+
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-1">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>about</h4>
+                    <ul>
+                        <li><a href="#ifound">about Ifound</a></li>
+                        <li><a href="#">working at Ifound</a></li>
+                        <li><a href="privacy.html">privacy policy</a></li>
+                        <li><a href="#">legal notices</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>lost and found application</h4>
+                    <ul>
+                        <li><a href="#">for Students
+                            </a></li>
+                        <li><a href="#">for Teachers & staff</a></li>
+                        <li><a href="#">for workers in Uet</a></li>
+                        <li><a href="#registeration">Register yourself</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>ifound Services
+                    </h4>
+                    <ul>
+                        <li><a href="#found-btn">Report found ITEMS</a></li>
+                        <li><a href="#lost-btn">Report lost ITEMS</a></li>
+                        <li><a href="#">Use post to informs Us and Other users</a></li>
+                        <li><a href="#">Get mailing Services for ITEMS recovery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support
+                    </h4>
+                    <ul>
+                        <li><a href="#">General Uet contacts</a></li>
+                        <li><a href="#">Uet taxila management</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- end of footer -->
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © <a href="#your-link">Pervaiz Sarfaz</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+
+</html>
